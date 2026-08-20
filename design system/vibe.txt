@@ -1,0 +1,10 @@
+Design system extracted from www.databricks.com (via MiroMiro):
+
+Colors (most used first): #FFFFFF, #016BC1, #1B3139, #FF5F46, #1B5162, #90A5B1, #10121E, #EB1600, #FF3621, #8ACAFF
+Fonts: DM Sans (400, 500, 600, 700); DM Mono (400)
+Border radius: 2px
+Base spacing: 20px
+Shadow style: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(27, 49, 57, 0.07) 0px 72px 104px 0px, rgba(27, 49, 57, 0.05) 0px 32px 40px 0px, rgba(27, 49, 57, 0.04) 0px 16px 24px 0px, rgba(27, 49, 57, 0.035) 0px 9px 13px 0px, rgba(27, 49, 57, 0.04) 0px 4px 8px 0px, rgba(27, 49, 57, 0.02) 0px 2px 3px 0px
+Overall vibe: Technical
+
+Use these exact colors, fonts, and values when generating UI for me.

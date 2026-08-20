@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<title>Estimating Services Agreement — Tendr</title>
+<style>
+/*__FONTS__*/
+
+/* ==========================================================================
+   Tendr — Estimating Services Agreement
+   Tokens lifted from site/css/styles.css (design system)
+   ========================================================================== */
+:root{
+  --navy-950:#0A2126; --navy-900:#0B2026; --navy-800:#1B3139; --navy-700:#143D4A;
+  --navy-600:#1B5162; --navy-500:#618794; --navy-400:#90A5B1; --navy-300:#C4CCD6;
+  --navy-100:#EDF2F8;
+  --oat-light:#F9F7F4; --oat-medium:#EEEDE9; --oat-dark:#E3E1DA;
+  --gray-lines:#DCE0E2; --gray-text:#5A6F77;
+  --cta-red:#EB1600; --cta-red-hover:#BD2B26;
+  --white:#FFFFFF;
+  --font-sans:"DM Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --font-mono:"DM Mono","SF Mono",Menlo,monospace;
+  --radius:2px;
+}
+
+@page{
+  size:A4;
+  margin:16mm 15mm 18mm;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+body{
+  font-family:var(--font-sans);
+  font-size:9.6pt;
+  line-height:1.55;
+  color:var(--navy-800);
+  background:var(--white);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* --------------------------------------------------------------------------
+   Masthead — page 1 only
+   -------------------------------------------------------------------------- */
+.masthead{
+  display:flex;
+  align-items:flex-end;
+}
+.masthead .logo{width:104px;height:auto;display:block;}
+
+/* --------------------------------------------------------------------------
+   Title block
+   -------------------------------------------------------------------------- */
+.title-block{padding:22px 0 0;}
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:8pt;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--cta-red-hover);
+  display:block;
+  margin-bottom:10px;
+}
+h1{
+  font-size:24pt;
+  line-height:1.12;
+  font-weight:500;
+  letter-spacing:-.015em;
+  color:var(--navy-900);
+  max-width:15ch;
+}
+.rule{
+  width:44px;height:3px;
+  background:var(--cta-red);
+  margin:14px 0 14px;
+}
+.lede{
+  font-size:9.6pt;
+  line-height:1.62;
+  color:var(--gray-text);
+  max-width:62em;
+}
+.lede strong{color:var(--navy-800);font-weight:500;}
+
+/* --------------------------------------------------------------------------
+   Client details card
+   -------------------------------------------------------------------------- */
+.card{
+  margin-top:20px;
+  background:var(--oat-light);
+  border:1px solid var(--oat-dark);
+  border-left:3px solid var(--cta-red);
+  border-radius:var(--radius);
+  padding:16px 18px 18px;
+  break-inside:avoid;
+}
+.card-title{
+  font-family:var(--font-mono);
+  font-size:7.5pt;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--navy-600);
+  margin-bottom:14px;
+}
+.field-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap:26px;
+  row-gap:14px;
+}
+.field{min-width:0;}
+.field.full{grid-column:1 / -1;}
+.field label{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:6.8pt;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  color:var(--navy-500);
+  margin-bottom:5px;
+}
+.field .line{
+  height:30px;
+  background:var(--white);
+  border:1px solid var(--navy-300);
+  border-radius:var(--radius);
+}
+
+/* --------------------------------------------------------------------------
+   Clauses
+   -------------------------------------------------------------------------- */
+.clauses{
+  margin-top:24px;
+}
+.clause{
+  break-inside:avoid;
+  page-break-inside:avoid;
+  padding-top:14px;
+  margin-top:14px;
+  border-top:1px solid var(--gray-lines);
+}
+.clause:first-child{border-top:0;margin-top:0;padding-top:0;}
+
+.clause h2{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  font-size:11pt;
+  line-height:1.25;
+  font-weight:500;
+  letter-spacing:-.005em;
+  color:var(--navy-900);
+  margin-bottom:7px;
+  break-after:avoid;
+}
+.clause h2 .num{
+  font-family:var(--font-mono);
+  font-size:8pt;
+  font-weight:500;
+  color:var(--cta-red);
+  letter-spacing:.02em;
+  flex:none;
+  min-width:1.6em;
+}
+.clause p{
+  color:var(--navy-800);
+  margin-left:calc(1.6em + 10px);
+}
+.clause p + p{margin-top:7px;}
+.clause p + ul{margin-top:7px;}
+.clause ul + p{margin-top:8px;}
+
+.clause ul{
+  list-style:none;
+  margin-left:calc(1.6em + 10px);
+}
+.clause ul li{
+  position:relative;
+  padding-left:15px;
+  margin-top:6px;
+}
+.clause ul li:first-child{margin-top:0;}
+.clause ul li::before{
+  content:"";
+  position:absolute;
+  left:0; top:.52em;
+  width:5px;height:5px;
+  background:var(--cta-red);
+  border-radius:var(--radius);
+}
+
+/* Emphasis callout inside a clause */
+.note{
+  margin-left:calc(1.6em + 10px);
+  margin-top:8px;
+  padding:9px 12px;
+  background:var(--navy-100);
+  border-radius:var(--radius);
+  font-size:9pt;
+  color:var(--navy-700);
+}
+
+/* --------------------------------------------------------------------------
+   Execution / signature block
+   -------------------------------------------------------------------------- */
+.execution{
+  break-inside:avoid;
+  break-before:auto;
+  margin-top:20px;
+  padding-top:14px;
+  border-top:2px solid var(--navy-800);
+}
+.execution > .eyebrow{margin-bottom:6px;}
+.execution-intro{
+  font-size:9pt;
+  color:var(--gray-text);
+  margin-bottom:12px;
+  max-width:60em;
+}
+.sign-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+.sign-party{
+  min-width:0;                 /* let the mono heading wrap instead of blowing out the track */
+  border:1px solid var(--gray-lines);
+  border-top:3px solid var(--navy-800);
+  border-radius:var(--radius);
+  padding:12px 14px 13px;
+  background:var(--white);
+  break-inside:avoid;
+}
+.sign-party.client{border-top-color:var(--cta-red);}
+.sign-party h3{
+  font-family:var(--font-mono);
+  font-size:7pt;
+  font-weight:500;
+  line-height:1.4;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  color:var(--navy-600);
+  margin-bottom:3px;
+}
+.sign-party .party-sub{
+  font-size:8pt;
+  color:var(--navy-500);
+  margin-bottom:11px;
+}
+.sign-field{margin-top:10px;}
+.sign-field:first-of-type{margin-top:0;}
+.sign-field label{
+  display:block;
+  font-family:var(--font-mono);
+  font-size:6.8pt;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  color:var(--navy-500);
+  margin-bottom:5px;
+}
+.sign-field .line{
+  height:19px;
+  border-bottom:1px solid var(--navy-300);
+}
+.sign-field.signature .line{
+  height:36px;
+  background:var(--oat-light);
+  border-bottom:1px solid var(--navy-400);
+  border-radius:var(--radius) var(--radius) 0 0;
+}
+.sign-row{
+  display:grid;
+  grid-template-columns:1fr 90px;
+  gap:14px;
+}
+
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <!--__LOGO__-->
+</header>
+
+<div class="title-block">
+  <span class="eyebrow">Agreement</span>
+  <h1>Estimating services agreement</h1>
+  <div class="rule"></div>
+  <p class="lede">
+    This agreement sets out the terms on which <strong>Tendr Pty Ltd, trading as Tendr</strong>
+    (“Tendr”, “we”, “us”) provides estimating and tendering services to the client named below
+    (“you”, “your”). By engaging us, you agree to these terms.
+  </p>
+</div>
+
+<section class="card">
+  <div class="card-title">Client details</div>
+  <div class="field-grid">
+    <div class="field"><label>Business name</label><div class="line"></div></div>
+    <div class="field"><label>ABN</label><div class="line"></div></div>
+    <div class="field"><label>Contact name</label><div class="line"></div></div>
+    <div class="field"><label>Phone</label><div class="line"></div></div>
+    <div class="field full"><label>Email</label><div class="line"></div></div>
+  </div>
+</section>
+
+<div class="clauses">
+
+  <section class="clause">
+    <h2><span class="num">01</span><span>Services</span></h2>
+    <p>Depending on what we agree for each job, we can provide:</p>
+    <ul>
+      <li>quantity takeoffs</li>
+      <li>priced bills of quantities</li>
+      <li>tender pricing and submission preparation</li>
+      <li>scope and contract review</li>
+      <li>variation pricing</li>
+    </ul>
+    <p>Before we start a job, we confirm in writing what we will deliver, what it will cost and when you will get it. An email is enough. Each job we confirm this way is a separate engagement under this agreement.</p>
+  </section>
+
+  <section class="clause">
+    <h2><span class="num">02</span><span>Fees and payment</span></h2>
+    <ul>
+      <li>The fee for each job is fixed, and we agree it in writing before we start. There are no subscriptions and no lock-in.</li>
+      <li>We invoice when we deliver the work. Payment is due within 7 days of the invoice.</li>
+      <li>Fees exclude GST unless we say otherwise.</li>
+      <li>If you cancel after we have started, you pay for the work we completed up to the date you cancelled.</li>
+    </ul>
+  </section>
+
+  <section class="clause">
+    <h2><span class="num">03</span><span>Turnaround</span></h2>
+    <p>We aim to deliver a standard quantity takeoff within 24 hours, and a full priced tender within 2 to 3 business days. The clock starts once we have the complete document set.</p>
+    <p>These are targets, not guarantees. They depend on you giving us documents that are complete, current and legible. If we cannot meet the target on a job, we will tell you promptly.</p>
+  </section>
+
+  <section class="clause">
+    <h2><span class="num">04</span><span>Your responsibilities</span></h2>
+    <ul>
+      <li>Give us everything relevant — tender documents, drawings, specifications, addenda and site information — and tell us if anything changes while the job is running.</li>
+      <li>Check every deliverable before you use it. The tender price you submit is your decision, as are all rates, margins, allowances and other commercial calls. Lodging the tender is your responsibility.</li>
+      <li>Make sure you hold the licences, registrations and insurances needed for the works you are tendering for.</li>
+    </ul>
+  </section>
+
+  <section class="clause">
+    <h2><span class="num">05</span><span>What our estimates are</span></h2>
+    <p>Our takeoffs, estimates and pricing are our professional opinion of the probable quantities and costs, based on the documents and information we have at the time. They are not a guarantee of:</p>
+    <ul>
+      <li>what the work will actually cost to build;</li>
+      <li>whether your tender will be successful;</li>
+      <li>whether the project will be profitable; or</li>
+      <li>whether the tender documents are complete.</li>
+    </ul>
+    <p>Where documents are unclear or incomplete, we will tell you what we assumed. It is your responsibility to check those assumptions before you rely on the deliverable.</p>
+  </section>
+
+  <section class="clause">
+    <h2><span class="num">06</span><span>Confidentiality</span></h2>
+    <p>We each keep the other’s confidential information private — including tender documents, pricing, rates and margins — and use it only for the job it was provided for. The only exception is where the law requires it to be disclosed.</p>
+  </section>
+
+  <section class="clause">
+    <h2><span class="num">07</span><span>Intellectual property</span></h2>
+    <p>Once you have paid in full, the deliverables we produced for that job are yours.</p>
+    <p>We keep ownership of the tools, templates, rate libraries, methods and know-how we brought to the job or that sit behind it, and we may reuse them for other clients.</p>
+  </section>
+
+  <section class="clause">
+    <h2><span class="num">08</span><span>Liability</span></h2>
+    <p>To the extent the law allows, our total liability for anything arising out of a job is capped at the fees you paid us for that job. Instead of paying, we may choose to supply the services again.</p>
+    <p>Neither of us is liable to the other for loss of profit, loss of revenue, loss of opportunity, or any indirect or consequential loss.</p>
+    <div class="note">Nothing in this agreement excludes, restricts or modifies any guarantee, right or remedy under the Australian Consumer Law that cannot lawfully be excluded. Where the law allows liability under such a guarantee to be limited, our liability is limited to supplying the services again or paying the cost of doing so.</div>
+  </section>
+
+  <section class="clause">
+    <h2><span class="num">09</span><span>Term and termination</span></h2>
+    <p>This agreement starts on the date it is signed and runs until one of us ends it. Either of us can end it at any time by giving written notice.</p>
+    <p>Ending this agreement does not affect jobs we have already confirmed — those either run to completion or are cancelled under clause 2. It also does not affect rights that have already accrued, fees still owing, or the confidentiality and liability clauses, which continue to apply.</p>
+  </section>
+
+  <section class="clause">
+    <h2><span class="num">10</span><span>Disputes and general</span></h2>
+    <p>If a dispute comes up, we will first try to resolve it in good faith by talking, senior person to senior person. If that does not work, we will try mediation before starting court proceedings. Either of us can still go straight to court for urgent injunctive relief or to recover a debt.</p>
+    <p>This agreement is governed by the laws of Victoria, Australia. It is the entire agreement between us for the services, and it can only be changed in writing signed by both of us. We work as an independent contractor: this agreement does not create a partnership, joint venture or employment relationship.</p>
+  </section>
+
+</div>
+
+<section class="execution">
+  <span class="eyebrow">Execution</span>
+  <p class="execution-intro">Signed as an agreement on the date of the last signature below.</p>
+  <div class="sign-grid">
+
+    <div class="sign-party client">
+      <h3>Signed for and on behalf of the Client</h3>
+      <div class="party-sub">The business named in Client details above</div>
+      <div class="sign-field"><label>Name</label><div class="line"></div></div>
+      <div class="sign-field"><label>Position</label><div class="line"></div></div>
+      <div class="sign-field signature"><label>Signature</label><div class="line"></div></div>
+      <div class="sign-field"><label>Date</label><div class="line"></div></div>
+    </div>
+
+    <div class="sign-party">
+      <h3>Signed for and on behalf of the Estimator</h3>
+      <div class="party-sub">Tendr Pty Ltd trading as Tendr</div>
+      <div class="sign-field"><label>Name</label><div class="line"></div></div>
+      <div class="sign-field"><label>Position</label><div class="line"></div></div>
+      <div class="sign-field signature"><label>Signature</label><div class="line"></div></div>
+      <div class="sign-field"><label>Date</label><div class="line"></div></div>
+    </div>
+
+  </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,2775 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exported Element</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #fafafa;
+      }
+    </style>
+    <style>
+      /* Extracted page CSS — makes the file render like the original element
+       even where the Play CDN's default theme falls short */
+      .exported-root {
+        color: rgb(27, 49, 57);
+        font-family: "DM Sans", sans-serif;
+        line-height: 24px;
+        cursor: crosshair;
+        tab-size: 4;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        color: rgb(27, 49, 57);
+        font-family: "DM Sans", sans-serif;
+      }
+
+      * {
+      }
+      * {
+        border: 0px solid;
+        box-sizing: border-box;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      button {
+        font-feature-settings: inherit;
+        color: inherit;
+        font-family: inherit;
+        font-size: 100%;
+        font-variation-settings: inherit;
+        font-weight: inherit;
+        letter-spacing: inherit;
+        line-height: inherit;
+        margin: 0px;
+        padding: 0px;
+      }
+      button {
+        text-transform: none;
+      }
+      button {
+        appearance: button;
+        background-color: transparent;
+        background-image: none;
+      }
+      ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+      }
+      button {
+        cursor: pointer;
+      }
+      svg {
+        display: block;
+        vertical-align: middle;
+      }
+      a {
+        cursor: pointer;
+      }
+      a,
+      a:active,
+      a:hover {
+        color: rgb(1 107 193/1);
+      }
+      a:hover {
+        text-decoration-line: underline;
+      }
+      a:active {
+        text-decoration-line: none;
+      }
+      .relative {
+        position: relative;
+      }
+      .left-0 {
+        left: 0px;
+      }
+      .left-full {
+        left: 100%;
+      }
+      .top-0 {
+        top: 0px;
+      }
+      .z-10 {
+        z-index: 10;
+      }
+      .order-2 {
+        order: 2;
+      }
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .ml-2 {
+        margin-left: 16px;
+      }
+      .mt-0\.5 {
+        margin-top: 4px;
+      }
+      .mt-1\.5 {
+        margin-top: 12px;
+      }
+      .mt-3 {
+        margin-top: 24px;
+      }
+      .block {
+        display: block;
+      }
+      .flex {
+        display: flex;
+      }
+      .hidden {
+        display: none;
+      }
+      .min-h-\[100\%\] {
+        min-height: 100%;
+      }
+      .w-\[90\%\] {
+        width: 90%;
+      }
+      .w-full {
+        width: 100%;
+      }
+      .flex-1 {
+        flex: 1 1 0%;
+      }
+      .break-inside-avoid {
+        break-inside: avoid;
+      }
+      .grid-flow-dense {
+        grid-auto-flow: dense;
+      }
+      .grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0px, 1fr));
+      }
+      .flex-wrap {
+        flex-wrap: wrap;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .gap-x-4 {
+        column-gap: 32px;
+      }
+      .overflow-auto {
+        overflow: auto;
+      }
+      .overflow-y-scroll {
+        overflow-y: scroll;
+      }
+      .rounded {
+        border-radius: 0.25rem;
+      }
+      .border-\[transparent\] {
+        border-color: transparent;
+      }
+      .border-oat-medium {
+        border-color: rgb(238 237 233/1);
+      }
+      .bg-white {
+        background-color: rgb(255 255 255/1);
+      }
+      .p-2\.5 {
+        padding: 20px;
+      }
+      .py-1 {
+        padding-bottom: 8px;
+        padding-top: 8px;
+      }
+      .pb-1 {
+        padding-bottom: 8px;
+      }
+      .pr-1 {
+        padding-right: 8px;
+      }
+      .text-left {
+        text-align: left;
+      }
+      .font-mono {
+        font-family: "DM Mono", monospace;
+      }
+      .text-1\.5 {
+        font-size: 12px;
+        line-height: 20px;
+      }
+      .text-1\.75 {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      .text-2 {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .text-2\.5 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+      .uppercase {
+        text-transform: uppercase;
+      }
+      .leading-none {
+        line-height: 1;
+      }
+      .leading-tight {
+        line-height: 1.25;
+      }
+      .text-cta-red {
+        color: rgb(235 22 0/1);
+      }
+      .text-gray-text {
+        color: rgb(90 111 119/1);
+      }
+      .text-navy-100 {
+        color: rgb(237 242 248/1);
+      }
+      .text-navy-800 {
+        color: rgb(27 49 57/1);
+      }
+      .transition-all {
+        transition-duration: 0.15s;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      @font-face {
+        font-display: swap;
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://www.databricks.com/en-website-assets/static/sans_400_ext.woff2")
+          format("woff2");
+        unicode-range:
+          U+100-2AF, U+304, U+308, U+329, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-display: swap;
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://www.databricks.com/en-website-assets/static/sans_400.woff2")
+          format("woff2");
+        unicode-range:
+          U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304,
+          U+308, U+329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-display: swap;
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 500;
+        src: url("https://www.databricks.com/en-website-assets/static/sans_500_ext.woff2")
+          format("woff2");
+        unicode-range:
+          U+100-2AF, U+304, U+308, U+329, U+1E00-1E9F, U+1EF2-1EFF, U+2020,
+          U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-display: swap;
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 500;
+        src: url("https://www.databricks.com/en-website-assets/static/sans_500.woff2")
+          format("woff2");
+        unicode-range:
+          U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304,
+          U+308, U+329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193,
+          U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-display: swap;
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 600;
+        src: url("https://www.databricks.com/en-website-assets/static/sans_600_ext.woff2")
+          format("woff2");
+        unicode-range:
+          U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308,
+          U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+          U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-display: swap;
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 600;
+        src: url("https://www.databricks.com/en-website-assets/static/sans_600.woff2")
+          format("woff2");
+        unicode-range:
+          U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304,
+          U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+          U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-display: swap;
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://www.databricks.com/en-website-assets/static/sans_700_ext.woff2")
+          format("woff2");
+        unicode-range:
+          U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308,
+          U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB,
+          U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-display: swap;
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 700;
+        src: url("https://www.databricks.com/en-website-assets/static/sans_700.woff2")
+          format("woff2");
+        unicode-range:
+          U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304,
+          U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212,
+          U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-display: swap;
+        font-family: "DM Mono";
+        font-style: normal;
+        font-weight: 400;
+        src: url("data:font/woff2;base64,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")
+          format("woff2");
+        unicode-range:
+          U+100-24F, U+259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF,
+          U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      @font-face {
+        font-display: swap;
+        font-family: "DM Mono";
+        font-style: normal;
+        font-weight: 400;
+        src: url("https://www.databricks.com/en-website-assets/static/mono_400.woff2")
+          format("woff2");
+        unicode-range:
+          U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+2000-206F,
+          U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-display: swap;
+        font-family: "Hubot Sans";
+        font-style: normal;
+        font-weight: 100 900;
+        src: url("https://www.databricks.com/en-website-assets/static/HubotSans-VF.woff2")
+          format("woff2");
+      }
+      .scroll-bar-transparent {
+        overflow: overlay;
+      }
+      .scroll-bar-transparent::-webkit-scrollbar {
+        height: 0px;
+        width: 0px;
+      }
+      .scroll-bar-transparent::-webkit-scrollbar-thumb {
+        background: padding-box transparent;
+        border: 8px solid transparent;
+        border-radius: 12px;
+      }
+      @font-face {
+        font-display: block;
+        font-family: icomoon;
+        font-style: normal;
+        font-weight: 400;
+        src:
+          url("data:font/ttf;base64,AAEAAAALAIAAAwAwT1MvMg8SBbUAAAC8AAAAYGNtYXAXVtKIAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZlYtJ3UAAAF4AAAAoGhlYWQlR7UkAAACGAAAADZoaGVhCBEEFgAAAlAAAAAkaG10eA6eAG0AAAJ0AAAAGGxvY2EAeABMAAACjAAAAA5tYXhwAAkADAAAApwAAAAgbmFtZZlKCfsAAAK8AAABhnBvc3QAAwAAAAAERAAAACAAAwOKAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADpAQPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6QH//f//AAAAAAAg6QD//f//AAH/4xcEAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAMwRPA00ACQAACQInASE1IQE3AsIBjf5zSQER/HYDiv7vSQNN/nP+c0kBEGgBEEkAAgBtAC4DbgMwAAMACQAANxcBJyUVIREzEW1TAmVT/jQB8naCVAJlVEl2/g4CaAAAAQAAAAAAAJmAls1fDzz1AAsEAAAAAADg7bhtAAAAAODtuG0AAAAABE8DTQAAAAgAAgAAAAAAAAABAAADwP/AAAAETwAAAAAETwABAAAAAAAAAAAAAAAAAAAABgQAAAAAAAAAAAAAAAIAAAAETwAABE8AbQAAAAAACgAUAB4AOABQAAAAAQAAAAYACgACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAAcAAAABAAAAAAACAAcAYAABAAAAAAADAAcANgABAAAAAAAEAAcAdQABAAAAAAAFAAsAFQABAAAAAAAGAAcASwABAAAAAAAKABoAigADAAEECQABAA4ABwADAAEECQACAA4AZwADAAEECQADAA4APQADAAEECQAEAA4AfAADAAEECQAFABYAIAADAAEECQAGAA4AUgADAAEECQAKADQApGljb21vb24AaQBjAG8AbQBvAG8AblZlcnNpb24gMS4wAFYAZQByAHMAaQBvAG4AIAAxAC4AMGljb21vb24AaQBjAG8AbQBvAG8Abmljb21vb24AaQBjAG8AbQBvAG8AblJlZ3VsYXIAUgBlAGcAdQBsAGEAcmljb21vb24AaQBjAG8AbQBvAG8AbkZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=")
+            format("truetype"),
+          url("data:font/woff;base64,d09GRgABAAAAAASwAAsAAAAABGQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAABCAAAAGAAAABgDxIFtWNtYXAAAAFoAAAAVAAAAFQXVtKIZ2FzcAAAAbwAAAAIAAAACAAAABBnbHlmAAABxAAAAKAAAACgVi0ndWhlYWQAAAJkAAAANgAAADYlR7UkaGhlYQAAApwAAAAkAAAAJAgRBBZobXR4AAACwAAAABgAAAAYDp4AbWxvY2EAAALYAAAADgAAAA4AeABMbWF4cAAAAugAAAAgAAAAIAAJAAxuYW1lAAADCAAAAYYAAAGGmUoJ+3Bvc3QAAASQAAAAIAAAACAAAwAAAAMDigGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAA6QEDwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADgAAAAKAAgAAgACAAEAIOkB//3//wAAAAAAIOkA//3//wAB/+MXBAADAAEAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAADMETwNNAAkAAAkCJwEhNSEBNwLCAY3+c0kBEfx2A4r+70kDTf5z/nNJARBoARBJAAIAbQAuA24DMAADAAkAADcXASclFSERMxFtUwJlU/40AfJ2glQCZVRJdv4OAmgAAAEAAAAAAACZgJbNXw889QALBAAAAAAA4O24bQAAAADg7bhtAAAAAARPA00AAAAIAAIAAAAAAAAAAQAAA8D/wAAABE8AAAAABE8AAQAAAAAAAAAAAAAAAAAAAAYEAAAAAAAAAAAAAAACAAAABE8AAARPAG0AAAAAAAoAFAAeADgAUAAAAAEAAAAGAAoAAgAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAOAK4AAQAAAAAAAQAHAAAAAQAAAAAAAgAHAGAAAQAAAAAAAwAHADYAAQAAAAAABAAHAHUAAQAAAAAABQALABUAAQAAAAAABgAHAEsAAQAAAAAACgAaAIoAAwABBAkAAQAOAAcAAwABBAkAAgAOAGcAAwABBAkAAwAOAD0AAwABBAkABAAOAHwAAwABBAkABQAWACAAAwABBAkABgAOAFIAAwABBAkACgA0AKRpY29tb29uAGkAYwBvAG0AbwBvAG5WZXJzaW9uIDEuMABWAGUAcgBzAGkAbwBuACAAMQAuADBpY29tb29uAGkAYwBvAG0AbwBvAG5pY29tb29uAGkAYwBvAG0AbwBvAG5SZWd1bGFyAFIAZQBnAHUAbABhAHJpY29tb29uAGkAYwBvAG0AbwBvAG5Gb250IGdlbmVyYXRlZCBieSBJY29Nb29uLgBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+            format("woff");
+      }
+      @media (min-width: 1280px) {
+        .lg\:absolute {
+          position: absolute;
+        }
+        .lg\:z-10 {
+          z-index: 10;
+        }
+        .lg\:-mx-1\.5 {
+          margin-left: -12px;
+          margin-right: -12px;
+        }
+        .lg\:mx-0 {
+          margin-left: 0px;
+          margin-right: 0px;
+        }
+        .lg\:mr-2 {
+          margin-right: 16px;
+        }
+        .lg\:mt-2 {
+          margin-top: 16px;
+        }
+        .lg\:flex {
+          display: flex;
+        }
+        .lg\:grid {
+          display: grid;
+        }
+        .lg\:hidden {
+          display: none;
+        }
+        .lg\:h-\[64\.5px\] {
+          height: 64.5px;
+        }
+        .lg\:h-auto {
+          height: auto;
+        }
+        .lg\:max-h-\[calc\(100vh-64px\)\] {
+          max-height: calc(-64px + 100vh);
+        }
+        .lg\:w-\[100vw\] {
+          width: 100vw;
+        }
+        .lg\:w-auto {
+          width: auto;
+        }
+        .lg\:w-full {
+          width: 100%;
+        }
+        .lg\:break-after-column {
+          break-after: column;
+        }
+        .lg\:overflow-visible {
+          overflow: visible;
+        }
+        .lg\:overflow-x-hidden {
+          overflow-x: hidden;
+        }
+        .lg\:rounded-sm {
+          border-radius: 0.125rem;
+        }
+        .lg\:border-b {
+          border-bottom-width: 1px;
+        }
+        .lg\:border-b-4 {
+          border-bottom-width: 4px;
+        }
+        .lg\:border-l {
+          border-left-width: 1px;
+        }
+        .lg\:border-\[transparent\] {
+          border-color: transparent;
+        }
+        .lg\:border-oat-medium {
+          border-color: rgb(238 237 233 / var(--tw-border-opacity, 1));
+        }
+        .lg\:px-0 {
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+        .lg\:px-1\.5 {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+        .lg\:px-2 {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+        .lg\:py-0 {
+          padding-bottom: 0px;
+          padding-top: 0px;
+        }
+        .lg\:pb-2 {
+          padding-bottom: 16px;
+        }
+        .lg\:pt-0\.5 {
+          padding-top: 4px;
+        }
+        .lg\:pt-3 {
+          padding-top: 24px;
+        }
+        .lg\:text-2 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .lg\:font-normal {
+          font-weight: 400;
+        }
+        .lg\:leading-4 {
+          line-height: 1rem;
+        }
+        .lg\:leading-none {
+          line-height: 1;
+        }
+        .lg\:shadow-shadow-2 {
+          box-shadow:
+            var(--tw-ring-offset-shadow, 0 0 #0000),
+            var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+        }
+        .lg\:inner-wrapper {
+          margin-left: auto;
+          margin-right: auto;
+          width: 90%;
+        }
+        @media (min-width: 360px) {
+          .lg\:inner-wrapper {
+            max-width: 520px;
+          }
+        }
+        @media (min-width: 768px) {
+          .lg\:inner-wrapper {
+            max-width: 1136px;
+          }
+        }
+        @media (min-width: 1280px) {
+          .lg\:inner-wrapper {
+            max-width: 1144px;
+            width: 100%;
+          }
+        }
+        @media (min-width: 1366px) {
+          .lg\:inner-wrapper {
+            max-width: 1312px;
+          }
+        }
+        @media (min-width: 1536px) {
+          .lg\:inner-wrapper {
+            max-width: 1456px;
+          }
+        }
+      }
+      @media (min-width: 1366px) {
+        .xl\:mt-4 {
+          margin-top: 32px;
+        }
+        .xl\:block {
+          display: block;
+        }
+      }
+      @font-face {
+        font-family: swiper-icons;
+        font-style: normal;
+        font-weight: 400;
+        src: url("data:application/font-woff;charset=utf-8;base64, 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");
+      }
+      * {
+      }
+      .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .ml-2 {
+        margin-left: 16px;
+      }
+      .mt-0\.5 {
+        margin-top: 4px;
+      }
+      .mt-1\.5 {
+        margin-top: 12px;
+      }
+      .mt-3 {
+        margin-top: 24px;
+      }
+      .block {
+        display: block;
+      }
+      .flex {
+        display: flex;
+      }
+      .hidden {
+        display: none;
+      }
+      .w-\[90\%\] {
+        width: 90%;
+      }
+      .w-full {
+        width: 100%;
+      }
+      .grid-cols-4 {
+        grid-template-columns: repeat(4, minmax(0px, 1fr));
+      }
+      .gap-x-4 {
+        column-gap: 32px;
+      }
+      .border-\[transparent\] {
+        border-color: transparent;
+      }
+      .border-oat-medium {
+        border-color: rgb(238 237 233/1);
+      }
+      .bg-white {
+        background-color: rgb(255 255 255/1);
+      }
+      .p-2\.5 {
+        padding: 20px;
+      }
+      .py-1 {
+        padding-bottom: 8px;
+        padding-top: 8px;
+      }
+      .pb-1 {
+        padding-bottom: 8px;
+      }
+      .pr-1 {
+        padding-right: 8px;
+      }
+      .text-1\.5 {
+        font-size: 12px;
+        line-height: 20px;
+      }
+      .text-1\.75 {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      .text-2 {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .text-2\.5 {
+        font-size: 20px;
+        line-height: 28px;
+      }
+      .uppercase {
+        text-transform: uppercase;
+      }
+      .leading-none {
+        line-height: 1;
+      }
+      .leading-tight {
+        line-height: 1.25;
+      }
+      .text-cta-red {
+        color: rgb(235 22 0/1);
+      }
+      .text-gray-text {
+        color: rgb(90 111 119/1);
+      }
+      .text-navy-100 {
+        color: rgb(237 242 248/1);
+      }
+      .text-navy-800 {
+        color: rgb(27 49 57/1);
+      }
+      @media (min-width: 1280px) {
+        .lg\:-mx-1\.5 {
+          margin-left: -12px;
+          margin-right: -12px;
+        }
+        .lg\:mx-0 {
+          margin-left: 0px;
+          margin-right: 0px;
+        }
+        .lg\:mr-2 {
+          margin-right: 16px;
+        }
+        .lg\:mt-2 {
+          margin-top: 16px;
+        }
+        .lg\:flex {
+          display: flex;
+        }
+        .lg\:grid {
+          display: grid;
+        }
+        .lg\:hidden {
+          display: none;
+        }
+        .lg\:h-\[64\.5px\] {
+          height: 64.5px;
+        }
+        .lg\:h-auto {
+          height: auto;
+        }
+        .lg\:w-\[100vw\] {
+          width: 100vw;
+        }
+        .lg\:w-auto {
+          width: auto;
+        }
+        .lg\:w-full {
+          width: 100%;
+        }
+        .lg\:border-\[transparent\] {
+          border-color: transparent;
+        }
+        .lg\:border-oat-medium {
+          border-color: rgb(238 237 233 / var(--tw-border-opacity, 1));
+        }
+        .lg\:px-0 {
+          padding-left: 0px;
+          padding-right: 0px;
+        }
+        .lg\:px-1\.5 {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+        .lg\:px-2 {
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+        .lg\:py-0 {
+          padding-bottom: 0px;
+          padding-top: 0px;
+        }
+        .lg\:pb-2 {
+          padding-bottom: 16px;
+        }
+        .lg\:pt-0\.5 {
+          padding-top: 4px;
+        }
+        .lg\:pt-3 {
+          padding-top: 24px;
+        }
+        .lg\:text-2 {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .lg\:font-normal {
+          font-weight: 400;
+        }
+        .lg\:leading-4 {
+          line-height: 1rem;
+        }
+        .lg\:leading-none {
+          line-height: 1;
+        }
+      }
+      @media (min-width: 1366px) {
+        .xl\:mt-4 {
+          margin-top: 32px;
+        }
+        .xl\:block {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <ul
+      class="lg:w-full block lg:py-0 lg:h-auto order-2 scroll-bar-transparent overflow-y-scroll lg:overflow-visible lg:flex exported-root"
+    >
+      <li
+        class="lg:w-auto group transition-all lg:text-2 flex flex-wrap lg:py-0 lg:px-0 justify-between"
+        data-el-g2="whydatabricks-0"
+      >
+        <div style="height: 60px; width: 100%">
+          <button
+            type="button"
+            class="lg:leading-none lg:h-[64.5px] lg:z-10 lg:mx-0 border-oat-medium lg:border-b-4 lg:margin-0 p-2.5 lg:pt-3 lg:px-1.5 lg:text-2 flex items-center justify-between leading-none lg:font-normal text-2.5 flex-1 w-full z-10 lg:border-[transparent] lg:hover:border-navy-800"
+            id="mega-menu-whydatabricks-0"
+            aria-expanded="false"
+          >
+            Why Databricks
+            <svg
+              viewBox="0 0 330 512"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="1em"
+              height="1em"
+              class="ml-2 lg:hidden"
+            >
+              <path
+                d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="border-[transparent] left-0 w-full bg-white lg:absolute lg:max-h-[calc(100vh-64px)] overflow-auto lg:overflow-x-hidden lg:shadow-shadow-2"
+          style="top: 64px"
+        >
+          <ul class="hidden w-full lg:w-[100vw] bg-white lg:hidden">
+            <li class="w-[90%] mx-auto lg:w-full lg:inner-wrapper">
+              <ul class="lg:grid grid-cols-4 gap-x-4 relative grid-flow-dense">
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 1 / span 1; grid-row: span 16"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="why-databricks-discover-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Discover"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Discover
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/developers"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="discover-forappdevelopers-3"
+                          variant="B"
+                          aria-label="For App Developers"
+                        >
+                          <span class="w-full">For App Developers</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/why-databricks/executives"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="discover-forexecutives-3"
+                          variant="B"
+                          aria-label="For Executives"
+                        >
+                          <span class="w-full">For Executives</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/product/startups"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="discover-forstartups-3"
+                          variant="B"
+                          aria-label="For Startups "
+                        >
+                          <span class="w-full">For Startups</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/product/data-lakehouse"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="discover-lakehousearchitecture-3"
+                          variant="B"
+                          aria-label="Lakehouse Architecture "
+                        >
+                          <span class="w-full">Lakehouse Architecture</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/blog/category/databricks-ai"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="discover-databricksairesearch-3"
+                          variant="B"
+                          aria-label="Databricks AI Research"
+                        >
+                          <span class="w-full">Databricks AI Research</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 2 / span 1; grid-row: span 4"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="why-databricks-customers-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Customers"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Customers
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/customers"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="customers-customerstories-3"
+                          variant="B"
+                          aria-label="Customer Stories"
+                        >
+                          <span class="w-full">Customer Stories</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 3 / span 2; grid-row: span 13"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="why-databricks-partners-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Partners"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Partners
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 2; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/partners"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="partners-partneroverview-3"
+                          variant="B"
+                          aria-label="Partner Overview"
+                        >
+                          <span class="w-full">Partner Overview</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Explore the Databricks partner ecosystem
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/partners/partner-program"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="partners-partnerprogram-3"
+                          variant="B"
+                          aria-label="Partner Program"
+                        >
+                          <span class="w-full">Partner Program</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Explore benefits, tiers and how to become a partner
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          href="/partners/partner-directory"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="partners-findapartner-3"
+                          variant="B"
+                          aria-label="Find a Partner"
+                        >
+                          <span class="w-full">Find a Partner</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Discover Databricks partners for your needs
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/partners/partner-spotlight"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="partners-partnerspotlight-3"
+                          variant="B"
+                          aria-label="Partner Spotlight"
+                        >
+                          <span class="w-full">Partner Spotlight</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Featured partner announcements
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/partners/cloud-partners"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="partners-cloudproviders-3"
+                          variant="B"
+                          aria-label="Cloud Providers"
+                        >
+                          <span class="w-full">Cloud Providers</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Databricks on AWS, Azure and GCP
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/partners/consulting-and-si/partner-solutions"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="partners-partnersolutions-3"
+                          variant="B"
+                          aria-label="Partner Solutions"
+                        >
+                          <span class="w-full">Partner Solutions</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Find custom industry and migration solutions
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li
+        class="lg:w-auto group transition-all lg:text-2 flex flex-wrap lg:py-0 lg:px-0 justify-between"
+        data-el-g2="product-0"
+      >
+        <div style="height: 60px; width: 100%">
+          <button
+            type="button"
+            class="lg:leading-none lg:h-[64.5px] lg:z-10 lg:mx-0 border-oat-medium lg:border-b-4 lg:margin-0 p-2.5 lg:pt-3 lg:px-1.5 lg:text-2 flex items-center justify-between leading-none lg:font-normal text-2.5 flex-1 w-full z-10 lg:border-[transparent] lg:hover:border-navy-800"
+            id="mega-menu-product-0"
+            aria-expanded="false"
+          >
+            Product
+            <svg
+              viewBox="0 0 330 512"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="1em"
+              height="1em"
+              class="ml-2 lg:hidden"
+            >
+              <path
+                d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="border-[transparent] left-0 w-full bg-white lg:absolute lg:max-h-[calc(100vh-64px)] overflow-auto lg:overflow-x-hidden lg:shadow-shadow-2"
+          style="top: 64px"
+        >
+          <ul class="hidden w-full lg:w-[100vw] bg-white lg:hidden">
+            <li class="w-[90%] mx-auto lg:w-full lg:inner-wrapper">
+              <ul class="lg:grid grid-cols-4 gap-x-4 relative grid-flow-dense">
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 1 / span 2; grid-row: span 25"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="product-databricksplatform-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Databricks Platform"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Databricks Platform
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 2; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/product/platform"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-platform-platformoverview-3"
+                          variant="B"
+                          aria-label="Platform Overview"
+                        >
+                          <span class="w-full">Platform Overview</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            A unified platform for data, analytics and AI
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/product/genie/one"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-platform-aiassistant-3"
+                          variant="B"
+                          aria-label="AI Assistant"
+                        >
+                          <span class="w-full">AI Assistant</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Agentic coworker for business users
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/product/databricks-apps"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-platform-applicationdevelopment-3"
+                          variant="B"
+                          aria-label="Application Development"
+                        >
+                          <span class="w-full">Application Development</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Quickly build secure data and AI apps
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/product/artificial-intelligence"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-platform-artificialintelligence-3"
+                          variant="B"
+                          aria-label="Artificial Intelligence"
+                        >
+                          <span class="w-full">Artificial Intelligence</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Build and deploy ML and GenAI applications
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="https://www.databricks.com/product/business-intelligence"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-platform-businessintelligence-3"
+                          variant="B"
+                          aria-label="Business Intelligence"
+                        >
+                          <span class="w-full">Business Intelligence</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Intelligent analytics for real-world data
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          href="/product/customerlake-cdp"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-platform-customerdataplatform-3"
+                          variant="B"
+                          aria-label="Customer Data Platform"
+                        >
+                          <span class="w-full">Customer Data Platform</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Agentic CDP embedded in Databricks
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/product/data-engineering"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-platform-dataengineering-3"
+                          variant="B"
+                          aria-label="Data Engineering"
+                        >
+                          <span class="w-full">Data Engineering</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            ETL and orchestration for batch and streaming data
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/product/databricks-lakehouse"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-platform-datawarehousing-3"
+                          variant="B"
+                          aria-label="Data Warehousing"
+                        >
+                          <span class="w-full">Data Warehousing</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Serverless data warehouse for SQL analytics
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/product/lakebase"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-platform-database-3"
+                          variant="B"
+                          aria-label="Database"
+                        >
+                          <span class="w-full">Database</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Postgres for data apps and AI agents
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/product/unity-catalog"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-platform-governance-3"
+                          variant="B"
+                          aria-label="Governance"
+                        >
+                          <span class="w-full">Governance</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Unified governance for all data, analytics and AI
+                            assets
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/product/lakewatch"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-platform-security-3"
+                          variant="B"
+                          aria-label="Security"
+                        >
+                          <span class="w-full">Security</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Open agentic SIEM built for the AI era
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/product/opensharing"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-platform-sharing-3"
+                          variant="B"
+                          aria-label="Sharing"
+                        >
+                          <span class="w-full">Sharing</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Open data sharing for data, analytics and AI
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 3 / span 1; grid-row: span 13"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="product-integrationsanddata-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Integrations and Data"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Integrations and Data
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/product/marketplace"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="integrations-and-data-marketplace-3"
+                          variant="B"
+                          aria-label="Marketplace"
+                        >
+                          <span class="w-full">Marketplace</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Open marketplace for data, analytics and AI
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/product/data-science/ide-integrations"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="integrations-and-data-ideintegrations-3"
+                          variant="B"
+                          aria-label="IDE Integrations"
+                        >
+                          <span class="w-full">IDE Integrations</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Build on the Lakehouse in your favorite IDE
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/partnerconnect"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="integrations-and-data-partnerconnect-3"
+                          variant="B"
+                          aria-label="Partner Connect"
+                        >
+                          <span class="w-full">Partner Connect</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Discover and integrate with the Databricks ecosystem
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 4 / span 1; grid-row: span 9"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="product-pricing-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Pricing"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Pricing
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/product/pricing"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="pricing-databrickspricing-3"
+                          variant="B"
+                          aria-label="Databricks Pricing"
+                        >
+                          <span class="w-full">Databricks Pricing</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Explore product pricing, DBUs and more
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/product/pricing/product-pricing/instance-types"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="pricing-costcalculator-3"
+                          variant="B"
+                          aria-label="Cost Calculator"
+                        >
+                          <span class="w-full">Cost Calculator</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Estimate your compute costs on any cloud
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 4 / span 1; grid-row: span 5"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="product-opensource-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Open Source"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Open Source
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/product/open-source"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="open-source-opensourcetechnologies-3"
+                          variant="B"
+                          aria-label="Open Source Technologies"
+                        >
+                          <span class="w-full">Open Source Technologies</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Learn more about the innovations behind the platform
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li
+        class="lg:w-auto group transition-all lg:text-2 flex flex-wrap lg:py-0 lg:px-0 justify-between"
+        data-el-g2="solutions-0"
+      >
+        <div style="height: 60px; width: 100%">
+          <button
+            type="button"
+            class="lg:leading-none lg:h-[64.5px] lg:z-10 lg:mx-0 border-oat-medium lg:border-b-4 lg:margin-0 p-2.5 lg:pt-3 lg:px-1.5 lg:text-2 flex items-center justify-between leading-none lg:font-normal text-2.5 flex-1 w-full z-10 lg:border-[transparent] lg:hover:border-navy-800"
+            id="mega-menu-solutions-0"
+            aria-expanded="false"
+          >
+            Solutions
+            <svg
+              viewBox="0 0 330 512"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="1em"
+              height="1em"
+              class="ml-2 lg:hidden"
+            >
+              <path
+                d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="border-[transparent] left-0 w-full bg-white lg:absolute lg:max-h-[calc(100vh-64px)] overflow-auto lg:overflow-x-hidden lg:shadow-shadow-2"
+          style="top: 64px"
+        >
+          <ul class="hidden w-full lg:w-[100vw] bg-white lg:hidden">
+            <li class="w-[90%] mx-auto lg:w-full lg:inner-wrapper">
+              <ul class="lg:grid grid-cols-4 gap-x-4 relative grid-flow-dense">
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 1 / span 2; grid-row: span 13"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="solutions-databricksforindustries-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Databricks for Industries"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Databricks for Industries
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 2; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/solutions/industries/telecommunications"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-for-industries-telecommunications-3"
+                          variant="B"
+                          aria-label="Telecommunications"
+                        >
+                          <span class="w-full">Telecommunications</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/solutions/industries/financial-services"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-for-industries-financialservices-3"
+                          variant="B"
+                          aria-label="Financial Services"
+                        >
+                          <span class="w-full">Financial Services</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/solutions/industries/healthcare-and-life-sciences"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-for-industries-healthcare&amp;lifesciences-3"
+                          variant="B"
+                          aria-label="Healthcare &amp; Life Sciences"
+                        >
+                          <span class="w-full">
+                            Healthcare &amp; Life Sciences
+                          </span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          href="/solutions/industries/manufacturing-industry-solutions"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-for-industries-manufacturing-3"
+                          variant="B"
+                          aria-label="Manufacturing"
+                        >
+                          <span class="w-full">Manufacturing</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/solutions/industries/media-and-entertainment"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-for-industries-mediaandentertainment-3"
+                          variant="B"
+                          aria-label="Media and Entertainment"
+                        >
+                          <span class="w-full">Media and Entertainment</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/solutions/industries/public-sector"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-for-industries-publicsector-3"
+                          variant="B"
+                          aria-label="Public Sector"
+                        >
+                          <span class="w-full">Public Sector</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          href="/solutions/industries/retail-industry-solutions"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-for-industries-retail-3"
+                          variant="B"
+                          aria-label="Retail"
+                        >
+                          <span class="w-full">Retail</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/solutions"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="databricks-for-industries-seeallindustries-3"
+                          variant="B"
+                          aria-label="See All Industries"
+                        >
+                          <span class="w-full">See All Industries</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 3 / span 1; grid-row: span 13"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="solutions-crossindustrysolutions-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Cross Industry Solutions"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Cross Industry Solutions
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/solutions/ai-agents"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="cross-industry-solutions-aiagents-3"
+                          variant="B"
+                          aria-label="AI Agents"
+                        >
+                          <span class="w-full">AI Agents</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/solutions/industries/ai-governance"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="cross-industry-solutions-aigovernance-3"
+                          variant="B"
+                          aria-label="AI Governance"
+                        >
+                          <span class="w-full">AI Governance</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/solutions/industries/cybersecurity"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="cross-industry-solutions-cybersecurity-3"
+                          variant="B"
+                          aria-label="Cybersecurity"
+                        >
+                          <span class="w-full">Cybersecurity</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/solutions/industries/marketing"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="cross-industry-solutions-marketing-3"
+                          variant="B"
+                          aria-label="Marketing"
+                        >
+                          <span class="w-full">Marketing</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 4 / span 1; grid-row: span 7"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="solutions-migration&amp;deployment-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Migration &amp; Deployment"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Migration &amp; Deployment
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/solutions/migration"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="migration-&amp;-deployment-datamigration-3"
+                          variant="B"
+                          aria-label="Data Migration"
+                        >
+                          <span class="w-full">Data Migration</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/professional-services"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="migration-&amp;-deployment-forwarddeployedengineering-3"
+                          variant="B"
+                          aria-label="Forward Deployed Engineering"
+                        >
+                          <span class="w-full">
+                            Forward Deployed Engineering
+                          </span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 4 / span 1; grid-row: span 5"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="solutions-solutionaccelerators-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Solution Accelerators"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Solution Accelerators
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/solutions/accelerators"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="solution-accelerators-exploreaccelerators-3"
+                          variant="B"
+                          aria-label="Explore Accelerators"
+                        >
+                          <span class="w-full">Explore Accelerators</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Move faster toward outcomes that matter
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li
+        class="lg:w-auto group transition-all lg:text-2 flex flex-wrap lg:py-0 lg:px-0 justify-between"
+        data-el-g2="resources-0"
+      >
+        <div style="height: 60px; width: 100%">
+          <button
+            type="button"
+            class="lg:leading-none lg:h-[64.5px] lg:z-10 lg:mx-0 border-oat-medium lg:border-b-4 lg:margin-0 p-2.5 lg:pt-3 lg:px-1.5 lg:text-2 flex items-center justify-between leading-none lg:font-normal text-2.5 flex-1 w-full z-10 lg:border-[transparent] lg:hover:border-navy-800"
+            id="mega-menu-resources-0"
+            aria-expanded="false"
+          >
+            Resources
+            <svg
+              viewBox="0 0 330 512"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="1em"
+              height="1em"
+              class="ml-2 lg:hidden"
+            >
+              <path
+                d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="border-[transparent] left-0 w-full bg-white lg:absolute lg:max-h-[calc(100vh-64px)] overflow-auto lg:overflow-x-hidden lg:shadow-shadow-2"
+          style="top: 64px"
+        >
+          <ul class="hidden w-full lg:w-[100vw] bg-white lg:hidden">
+            <li class="w-[90%] mx-auto lg:w-full lg:inner-wrapper">
+              <ul class="lg:grid grid-cols-4 gap-x-4 relative grid-flow-dense">
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 1 / span 1; grid-row: span 21"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="resources-learning-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Learning"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Learning
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="https://www.databricks.com/learn/training/home"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="learning-training-3"
+                          variant="B"
+                          aria-label="Training"
+                        >
+                          <span class="w-full">Training</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Discover curriculum tailored to your needs
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="https://www.databricks.com/learn/training/login"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="learning-databricksacademy-3"
+                          variant="B"
+                          aria-label="Databricks Academy"
+                        >
+                          <span class="w-full">Databricks Academy</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Sign in to the Databricks learning platform
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="https://www.databricks.com/learn/training/certification"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="learning-certification-3"
+                          variant="B"
+                          aria-label="Certification"
+                        >
+                          <span class="w-full">Certification</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Gain recognition and differentiation
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/learn/free-edition"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="learning-freeedition-3"
+                          variant="B"
+                          aria-label="Free Edition"
+                        >
+                          <span class="w-full">Free Edition</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Learn professional Data and AI tools for free
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/university"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="learning-universityalliance-3"
+                          variant="B"
+                          aria-label="University Alliance"
+                        >
+                          <span class="w-full">University Alliance</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Want to teach Databricks? See how.
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 2 / span 1; grid-row: span 13"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="resources-events-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Events"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Events
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="https://www.databricks.com/dataaisummit"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="events-data+aisummit-3"
+                          variant="B"
+                          aria-label="Data + AI Summit"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span class="w-full">Data + AI Summit</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/dataaisummit/worldtour"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="events-data+aiworldtour-3"
+                          variant="B"
+                          aria-label="Data + AI World Tour"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span class="w-full">Data + AI World Tour</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="https://www.databricks.com/ai-days"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="events-aidays-3"
+                          variant="B"
+                          aria-label="AI Days"
+                        >
+                          <span class="w-full">AI Days</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/events"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="events-eventcalendar-3"
+                          variant="B"
+                          aria-label="Event Calendar"
+                        >
+                          <span class="w-full">Event Calendar</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 3 / span 1; grid-row: span 17"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="resources-blogandpodcasts-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Blog and Podcasts"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Blog and Podcasts
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/blog"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="blog-and-podcasts-databricksblog-3"
+                          variant="B"
+                          aria-label="Databricks Blog"
+                        >
+                          <span class="w-full">Databricks Blog</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Explore news, product announcements, and more
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/blog/category/databricks-ai"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="blog-and-podcasts-aiblog-3"
+                          variant="B"
+                          aria-label="AI Blog"
+                        >
+                          <span class="w-full">AI Blog</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Explore our AI research and engineering work
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/discover/data-brew"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="blog-and-podcasts-databrewpodcast-3"
+                          variant="B"
+                          aria-label="Data Brew Podcast"
+                        >
+                          <span class="w-full">Data Brew Podcast</span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Let’s talk data!
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/discover/champions-of-data-and-ai"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="blog-and-podcasts-championsofdata+aipodcast-3"
+                          variant="B"
+                          aria-label="Champions of Data + AI Podcast"
+                        >
+                          <span class="w-full">
+                            Champions of Data + AI Podcast
+                          </span>
+                          <div
+                            class="text-gray-text text-1.5 mt-0.5 text-left leading-tight"
+                          >
+                            Insights from data leaders powering innovation
+                          </div>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 4 / span 1; grid-row: span 10"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="resources-gethelp-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Get Help"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Get Help
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="https://www.databricks.com/support"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="get-help-customersupport-3"
+                          variant="B"
+                          aria-label="Customer Support"
+                        >
+                          <span class="w-full">Customer Support</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="https://www.databricks.com/databricks-documentation"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="get-help-documentation-3"
+                          variant="B"
+                          aria-label="Documentation"
+                        >
+                          <span class="w-full">Documentation</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="https://community.databricks.com/s/"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="get-help-community-3"
+                          variant="B"
+                          aria-label="Community"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <span class="w-full">Community</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 4 / span 1; grid-row: span 10"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="resources-divedeep-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Dive Deep"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Dive Deep
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/resources"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="dive-deep-resourcecenter-3"
+                          variant="B"
+                          aria-label="Resource Center"
+                        >
+                          <span class="w-full">Resource Center</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/resources/demos"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="dive-deep-democenter-3"
+                          variant="B"
+                          aria-label="Demo Center"
+                        >
+                          <span class="w-full">Demo Center</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/resources/architectures"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="dive-deep-architecturecenter-3"
+                          variant="B"
+                          aria-label="Architecture Center"
+                        >
+                          <span class="w-full">Architecture Center</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li
+        class="lg:w-auto group transition-all lg:text-2 flex flex-wrap lg:py-0 lg:px-0 justify-between"
+        data-el-g2="about-0"
+      >
+        <div style="height: 60px; width: 100%">
+          <button
+            type="button"
+            class="lg:leading-none lg:h-[64.5px] lg:z-10 lg:mx-0 border-oat-medium lg:border-b-4 lg:margin-0 p-2.5 lg:pt-3 lg:px-1.5 lg:text-2 flex items-center justify-between leading-none lg:font-normal text-2.5 flex-1 w-full z-10 lg:border-[transparent] lg:hover:border-navy-800"
+            id="mega-menu-about-0"
+            aria-expanded="false"
+          >
+            About
+            <svg
+              viewBox="0 0 330 512"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              width="1em"
+              height="1em"
+              class="ml-2 lg:hidden"
+            >
+              <path
+                d="M305.913 197.085c0 2.266-1.133 4.815-2.833 6.514L171.087 335.593c-1.7 1.7-4.249 2.832-6.515 2.832s-4.815-1.133-6.515-2.832L26.064 203.599c-1.7-1.7-2.832-4.248-2.832-6.514s1.132-4.816 2.832-6.515l14.162-14.163c1.7-1.699 3.966-2.832 6.515-2.832 2.266 0 4.815 1.133 6.515 2.832l111.316 111.317 111.316-111.317c1.7-1.699 4.249-2.832 6.515-2.832s4.815 1.133 6.515 2.832l14.162 14.163c1.7 1.7 2.833 4.249 2.833 6.515"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="border-[transparent] left-0 w-full bg-white lg:absolute lg:max-h-[calc(100vh-64px)] overflow-auto lg:overflow-x-hidden lg:shadow-shadow-2"
+          style="top: 64px"
+        >
+          <ul class="hidden w-full lg:w-[100vw] bg-white lg:hidden">
+            <li class="w-[90%] mx-auto lg:w-full lg:inner-wrapper">
+              <ul class="lg:grid grid-cols-4 gap-x-4 relative grid-flow-dense">
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 1 / span 1; grid-row: span 13"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="about-company-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Company"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Company
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/company/about-us"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="company-whoweare-3"
+                          variant="B"
+                          aria-label="Who We Are"
+                        >
+                          <span class="w-full">Who We Are</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/company/leadership-team"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="company-ourteam-3"
+                          variant="B"
+                          aria-label="Our Team"
+                        >
+                          <span class="w-full">Our Team</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/databricks-ventures"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="company-databricksventures-3"
+                          variant="B"
+                          aria-label="Databricks Ventures"
+                        >
+                          <span class="w-full">Databricks Ventures</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/company/contact"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="company-contactus-3"
+                          variant="B"
+                          aria-label="Contact Us"
+                        >
+                          <span class="w-full">Contact Us</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 2 / span 1; grid-row: span 7"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="about-careers-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Careers"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Careers
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/company/careers"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="careers-workingatdatabricks-3"
+                          variant="B"
+                          aria-label="Working at Databricks"
+                        >
+                          <span class="w-full">Working at Databricks</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/company/careers/open-positions"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="careers-openjobs-3"
+                          variant="B"
+                          aria-label="Open Jobs"
+                        >
+                          <span class="w-full">Open Jobs</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 3 / span 1; grid-row: span 7"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="about-press-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Press"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Press
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5">
+                        <a
+                          data-external-link="true"
+                          href="/company/awards-and-recognition"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="press-awardsandrecognition-3"
+                          variant="B"
+                          aria-label="Awards and Recognition"
+                        >
+                          <span class="w-full">Awards and Recognition</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/company/newsroom"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="press-newsroom-3"
+                          variant="B"
+                          aria-label="Newsroom"
+                        >
+                          <span class="w-full">Newsroom</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li
+                  class="lg:mr-2 header-mobile-accordion text-navy-100"
+                  style="grid-column: 4 / span 1; grid-row: span 4"
+                >
+                  <div
+                    class="w-full lg:border-b lg:border-oat-medium w-full lg:rounded-sm text-left pb-1 lg:pb-2 text-navy-800 block hover:text-navy-800 hover:no-underline"
+                    id="about-securityandtrust-2"
+                    variant="B"
+                    data-menulinktype="AccordionButton"
+                    aria-label="Security and Trust"
+                  >
+                    <span
+                      class="text-1.75 mt-3 flex justify-between text-left leading-none xl:mt-4 xl:block"
+                    >
+                      <span
+                        role="heading"
+                        aria-level="2"
+                        class="text-cta-red w-full pr-1 font-mono uppercase"
+                      >
+                        Security and Trust
+                      </span>
+                    </span>
+                  </div>
+                  <div>
+                    <ul class="lg:pt-0.5" style="columns: 1; column-gap: 32px">
+                      <li class="lg:mt-2 mt-1.5 lg:break-after-column">
+                        <a
+                          data-external-link="true"
+                          href="/trust"
+                          class="text-navy-800 hover:text-navy-800 hover:no-underline block lg:text-2 text-2 lg:leading-4 py-1 break-inside-avoid lg:-mx-1.5 lg:px-1.5 lg:hover:bg-oat-light rounded"
+                          id="security-and-trust-securityandtrust-3"
+                          variant="B"
+                          aria-label="Security and Trust"
+                        >
+                          <span class="w-full">Security and Trust</span>
+                        </a>
+                        <ul
+                          class="hidden lg:absolute top-0 left-full lg:border-oat-medium lg:pt-3 lg:px-2 lg:pb-2 lg:border-l min-h-[100%]"
+                        ></ul>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </body>
+</html>
