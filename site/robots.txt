@@ -1,0 +1,5 @@
+# https://gotendr.com/
+User-agent: *
+Allow: /
+
+Sitemap: https://gotendr.com/sitemap.xml
