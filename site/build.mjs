@@ -18,7 +18,7 @@ const CHECK_ONLY = process.argv.includes('--check');
 // ---------------------------------------------------------------- config ----
 
 const SITE = {
-  origin: 'https://gotendr.com',
+  origin: 'https://www.gotendr.com',
   brand: 'Tendr',
   locale: 'en-AU',
   lang: 'en-AU',

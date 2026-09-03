@@ -1,4 +1,4 @@
-# https://gotendr.com/
+# https://www.gotendr.com/
 
 # Search and AI retrieval crawlers are allowed explicitly. Several of these
 # default to blocked at the CDN layer, so also confirm they are permitted there.
@@ -45,4 +45,4 @@ User-agent: *
 Allow: /
 Disallow: /*?*utm
 
-Sitemap: https://gotendr.com/sitemap.xml
+Sitemap: https://www.gotendr.com/sitemap.xml
