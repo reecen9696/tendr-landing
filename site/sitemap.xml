@@ -19,7 +19,43 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.gotendr.com/guides/tendering</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.gotendr.com/guides/variations</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.gotendr.com/guides/pricing/how-to-price-a-commercial-landscape-tender</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gotendr.com/guides/tendering/documents-needed-to-price-a-landscape-tender</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gotendr.com/guides/tendering/in-house-vs-outsourced-tender-estimating</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gotendr.com/guides/tendering/is-a-landscape-tender-worth-bidding</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.gotendr.com/guides/variations/how-to-price-a-landscape-contract-variation</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
