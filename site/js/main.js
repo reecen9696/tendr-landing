@@ -147,6 +147,7 @@
   }
 
   function syncExpandAll() {
+    if (!expandAll) return;
     var allOpen = faqItems.every(function (item) { return item.classList.contains("open"); });
     expandAll.textContent = allOpen ? "Collapse all" : "Expand all";
     expandAll.setAttribute("aria-pressed", String(allOpen));
@@ -159,7 +160,7 @@
     });
   });
 
-  expandAll.addEventListener("click", function () {
+  if (expandAll) expandAll.addEventListener("click", function () {
     var allOpen = faqItems.every(function (item) { return item.classList.contains("open"); });
     var stagger = reducedMotion.matches ? 0 : 45;
     faqItems.forEach(function (item, i) {

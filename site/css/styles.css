@@ -323,6 +323,7 @@ section { scroll-margin-top: calc(var(--nav-height) + 16px); }
 .nav-open .nav-drawer-links a:nth-child(3) { transition-delay: 0.22s; }
 .nav-open .nav-drawer-links a:nth-child(4) { transition-delay: 0.27s; }
 .nav-open .nav-drawer-links a:nth-child(5) { transition-delay: 0.32s; }
+.nav-open .nav-drawer-links a:nth-child(6) { transition-delay: 0.37s; }
 
 .nav-drawer-cta {
   position: sticky;
@@ -352,6 +353,11 @@ section { scroll-margin-top: calc(var(--nav-height) + 16px); }
 @media (min-width: 768px)  { .hero-copy { width: 50%; padding: 64px 0; } }
 @media (min-width: 1280px) { .hero-copy { padding: 112px 0; } }
 @media (min-width: 1366px) { .hero-copy { padding: 128px 0; } }
+/* Mobile: centre the hero copy, rating badge and buttons */
+@media (max-width: 767px) {
+  .hero-copy { text-align: center; }
+  .hero-copy .hero-ctas { justify-content: center; }
+}
 
 /* Google rating badge above the hero title */
 .rating {

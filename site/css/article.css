@@ -1,0 +1,439 @@
+/* ==========================================================================
+   Tendr - guides / article pages
+   Loaded only on /guides pages, so the landing page CSS payload is unchanged.
+   Uses the tokens defined in styles.css.
+   ========================================================================== */
+
+.article-page {
+  width: 90%;
+  max-width: 720px;
+  margin-inline: auto;
+  padding: 40px 0 72px;
+}
+
+@media (min-width: 768px) {
+  .article-page { padding: 64px 0 96px; }
+}
+
+/* --------------------------------------------------------------------------
+   Breadcrumb
+   -------------------------------------------------------------------------- */
+
+.article-page nav[aria-label="Breadcrumb"],
+.breadcrumb {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1;
+  color: var(--gray-text);
+  margin-bottom: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.article-page nav[aria-label="Breadcrumb"] a,
+.breadcrumb a {
+  color: var(--gray-text);
+  border-bottom: 1px solid transparent;
+  transition: color var(--dur-fast) var(--ease-soft), border-color var(--dur-fast) var(--ease-soft);
+}
+
+.article-page nav[aria-label="Breadcrumb"] a:hover,
+.breadcrumb a:hover { color: var(--orange-600); border-bottom-color: currentColor; }
+
+.article-page nav[aria-label="Breadcrumb"] span,
+.breadcrumb span { color: var(--navy-800); }
+
+/* --------------------------------------------------------------------------
+   Headings and body copy
+   -------------------------------------------------------------------------- */
+
+.article-page h1 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--navy-900);
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .article-page h1 { font-size: 44px; line-height: 52px; }
+}
+
+.article-page h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  color: var(--navy-900);
+  margin: 56px 0 16px;
+  scroll-margin-top: calc(var(--nav-height) + 24px);
+}
+
+@media (min-width: 768px) {
+  .article-page h2 { font-size: 28px; line-height: 36px; }
+}
+
+.article-page h3 {
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 600;
+  color: var(--navy-800);
+  margin: 32px 0 12px;
+}
+
+.article-page p {
+  font-size: 17px;
+  line-height: 29px;
+  color: var(--navy-800);
+  margin-bottom: 20px;
+}
+
+.article-page section { margin-bottom: 8px; }
+
+.article-page strong { font-weight: 600; color: var(--navy-900); }
+
+.article-page a:not(.btn) {
+  color: var(--navy-700);
+  text-decoration: underline;
+  text-decoration-color: var(--orange-tint);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast) var(--ease-soft), text-decoration-color var(--dur-fast) var(--ease-soft);
+}
+
+.article-page a:not(.btn):hover {
+  color: var(--orange-600);
+  text-decoration-color: var(--orange-600);
+}
+
+/* --------------------------------------------------------------------------
+   The answer block - the passage search engines and AI assistants extract.
+   Given visual weight so it also reads as the summary for a human skimming.
+   -------------------------------------------------------------------------- */
+
+.article-page .answer {
+  font-size: 19px;
+  line-height: 32px;
+  color: var(--navy-900);
+  background: var(--oat-light);
+  border-left: 3px solid var(--cta-red);
+  padding: 24px 24px 24px 28px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .article-page .answer { font-size: 20px; line-height: 34px; }
+}
+
+.article-page .byline {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--gray-text);
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--gray-lines);
+  margin-bottom: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   Table of contents
+   -------------------------------------------------------------------------- */
+
+.article-page nav[aria-label="Contents"] {
+  background: var(--oat-light);
+  padding: 24px 28px;
+  margin: 32px 0 8px;
+}
+
+.article-page nav[aria-label="Contents"]::before {
+  content: "On this page";
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--cta-red-hover);
+  margin-bottom: 14px;
+}
+
+.article-page nav[aria-label="Contents"] ul {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.article-page nav[aria-label="Contents"] a {
+  font-size: 15px;
+  line-height: 22px;
+  color: var(--navy-700);
+  text-decoration: none;
+}
+
+.article-page nav[aria-label="Contents"] a:hover {
+  color: var(--orange-600);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Lists
+   -------------------------------------------------------------------------- */
+
+.article-page section ul:not(.guide-list),
+.article-page section ol:not(.guide-list) {
+  margin: 0 0 24px;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.article-page section li:not(.guide-card) {
+  position: relative;
+  font-size: 17px;
+  line-height: 29px;
+  color: var(--navy-800);
+  padding-left: 30px;
+}
+
+.article-page section ul:not(.guide-list) li::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 12px;
+  width: 6px;
+  height: 6px;
+  background: var(--orange-600);
+  border-radius: 50%;
+}
+
+.article-page section ol:not(.guide-list) { counter-reset: step; }
+
+.article-page section ol:not(.guide-list) li { counter-increment: step; }
+
+.article-page section ol:not(.guide-list) li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 4px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 22px;
+  color: var(--cta-red-hover);
+  width: 22px;
+  text-align: left;
+}
+
+/* --------------------------------------------------------------------------
+   Tables - scroll inside their own container on narrow screens
+   -------------------------------------------------------------------------- */
+
+.article-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0 28px;
+  font-size: 15px;
+  line-height: 23px;
+  display: block;
+  overflow-x: auto;
+  white-space: normal;
+}
+
+@media (min-width: 768px) {
+  .article-page table { display: table; }
+}
+
+.article-page caption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--gray-text);
+  padding-bottom: 12px;
+}
+
+.article-page th,
+.article-page td {
+  text-align: left;
+  padding: 12px 16px 12px 0;
+  border-bottom: 1px solid var(--gray-lines);
+  vertical-align: top;
+}
+
+.article-page th {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--navy-600);
+  border-bottom-color: var(--navy-300);
+  white-space: nowrap;
+}
+
+.article-page td:first-child { color: var(--navy-900); font-weight: 500; }
+
+/* --------------------------------------------------------------------------
+   Definition list - key terms
+   -------------------------------------------------------------------------- */
+
+.article-page dl {
+  margin: 8px 0 24px;
+  border-top: 1px solid var(--gray-lines);
+}
+
+.article-page dt {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--navy-900);
+  padding-top: 18px;
+}
+
+.article-page dd {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--navy-800);
+  padding: 6px 0 18px;
+  border-bottom: 1px solid var(--gray-lines);
+}
+
+/* --------------------------------------------------------------------------
+   Key takeaways
+   -------------------------------------------------------------------------- */
+
+.article-page #takeaways {
+  background: var(--navy-900);
+  padding: 32px 28px 12px;
+  margin-top: 56px;
+}
+
+.article-page #takeaways h2 {
+  margin-top: 0;
+  color: var(--white);
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.article-page #takeaways li { color: var(--navy-100); font-size: 16px; line-height: 27px; }
+
+.article-page #takeaways li::before { background: var(--orange-500); }
+
+/* --------------------------------------------------------------------------
+   Article footer CTA
+   -------------------------------------------------------------------------- */
+
+.article-page article > footer {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid var(--gray-lines);
+}
+
+.article-page article > footer p:first-child {
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--navy-900);
+}
+
+.article-page article > footer p:last-child {
+  font-size: 15px;
+  line-height: 26px;
+  color: var(--gray-text);
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Guides index
+   -------------------------------------------------------------------------- */
+
+.guides-index { max-width: 840px; }
+
+.guides-hero { margin-bottom: 8px; }
+
+.guides-hero .eyebrow { margin-bottom: 20px; }
+
+.guides-lead {
+  font-size: 19px;
+  line-height: 32px;
+  color: var(--gray-text);
+  max-width: 640px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gray-lines);
+}
+
+.guide-group { margin-top: 48px; }
+
+.guide-group h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.guide-group-blurb {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--gray-text);
+  margin-bottom: 24px;
+}
+
+.guide-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--gray-lines);
+}
+
+.guide-card {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--gray-lines);
+}
+
+.guide-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.guide-card h3 a {
+  color: var(--navy-900);
+  text-decoration: none;
+}
+
+.guide-card h3 a:hover { color: var(--orange-600); }
+
+.guide-card p {
+  font-size: 16px;
+  line-height: 27px;
+  color: var(--gray-text);
+  margin-bottom: 10px;
+}
+
+.guide-card-meta {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1;
+  color: var(--navy-500);
+  margin-bottom: 0;
+}
+
+.guides-cta {
+  margin-top: 64px;
+  background: var(--oat-light);
+  padding: 40px 32px;
+  text-align: center;
+}
+
+.guides-cta h2 { margin: 0 0 12px; font-size: 24px; line-height: 32px; }
+
+.guides-cta p {
+  max-width: 480px;
+  margin: 0 auto 28px;
+  color: var(--gray-text);
+  font-size: 16px;
+  line-height: 27px;
+}
+
+.guides-cta .btn { display: inline-flex; }
