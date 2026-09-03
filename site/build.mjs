@@ -265,11 +265,15 @@ function parseArticle(path) {
   ).replace(/^\/?https?:\/\/[^/]+/, '');
 
   const segments = url.split('/').filter(Boolean);
+  // A single-segment URL (/about, /contact) is a standalone page: no section
+  // index, no pillar, no siblings. Anything deeper belongs to a section.
+  const standalone = segments.length === 1;
   const article = {
     file,
     path,
     url,
-    section: segments[0] || null,
+    standalone,
+    section: standalone ? null : (segments[0] || null),
     // /guides/<pillar>/<slug> has a pillar; /locations/<slug> does not.
     pillar: segments[0] === 'guides' && segments.length > 2 ? segments[1] : null,
     title: header.title_tag || (posting && posting.headline) || (h1 ? text(h1) : ''),
@@ -312,7 +316,7 @@ function validate(article, known) {
   // is not dated content and should not claim to be.
   if (article.isArticle && !article.datePublished)
     fail(file, 'no datePublished in the BlogPosting JSON-LD');
-  if (!article.section || !SECTIONS[article.section])
+  if (!article.standalone && (!article.section || !SECTIONS[article.section]))
     fail(file, `URL "${article.url}" is not in a known section (${Object.keys(SECTIONS).join(', ')}); add it to SECTIONS in build.mjs`);
   if (article.section === 'guides' && !article.pillar)
     fail(file, `guide URL "${article.url}" has no pillar segment; expected /guides/<pillar>/<slug>`);
@@ -436,14 +440,19 @@ function graphFor(nodes, pageUrl, pageName, pageDescription) {
     },
   ];
 
-  // Source nodes keep their own @context off; they live inside this graph now.
-  const rest = nodes.map((n) => {
-    const copy = { ...n };
+  // Source nodes drop their own @context; they live inside this graph now. A node
+  // sharing an @id with a base node (a page adding detail to the Organization)
+  // is merged into it rather than emitted twice.
+  const graph = [...base];
+  for (const node of nodes) {
+    const copy = { ...node };
     delete copy['@context'];
-    return copy;
-  });
+    const existing = copy['@id'] && graph.find((n) => n['@id'] === copy['@id']);
+    if (existing) Object.assign(existing, copy);
+    else graph.push(copy);
+  }
 
-  return JSON.stringify({ '@context': 'https://schema.org', '@graph': [...base, ...rest] }, null, 2);
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }, null, 2);
 }
 
 function renderHead({ title, description, url, image, extraCss = [], graph, type = 'article', published, modified }) {
@@ -711,6 +720,12 @@ function renderSitemap(articles, sections, pillars) {
 
   const entries = [
     { loc: '/', lastmod: today, changefreq: 'monthly', priority: '1.0' },
+    ...articles.filter((a) => a.standalone).map((a) => ({
+      loc: a.url,
+      lastmod: (a.dateModified || a.datePublished).slice(0, 10),
+      changefreq: 'monthly',
+      priority: '0.8',
+    })),
     ...[...sections.entries()].map(([slug, items]) => ({
       loc: `/${slug}`,
       lastmod: newest(items),
@@ -723,7 +738,7 @@ function renderSitemap(articles, sections, pillars) {
       changefreq: 'weekly',
       priority: '0.6',
     })),
-    ...articles.map((a) => ({
+    ...articles.filter((a) => !a.standalone).map((a) => ({
       loc: a.url,
       lastmod: (a.dateModified || a.datePublished).slice(0, 10),
       changefreq: 'monthly',

@@ -437,3 +437,19 @@
 }
 
 .guides-cta .btn { display: inline-flex; }
+
+/* --------------------------------------------------------------------------
+   Contact page booking widget
+   -------------------------------------------------------------------------- */
+
+.contact-widget {
+  margin: 8px 0 28px;
+  border: 1px solid var(--gray-lines);
+  background: var(--white);
+}
+
+.contact-widget iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
