@@ -68,8 +68,19 @@ const SECTIONS = {
     h1: 'Where we price tenders',
     title: 'Commercial Landscape Estimating by Location | Tendr',
     description: 'Commercial landscape tender estimating, quantity takeoffs and priced bills of quantities, by region across Australia.',
-    lead: 'We price commercial landscape tenders Australia-wide. These pages cover the regions we work in most.',
+    lead: 'We price commercial landscape tenders Australia-wide, from the drawings. These pages cover the regions we work in most.',
     grouped: false,
+    order: [
+      '/locations/melbourne',
+      '/locations/sydney',
+      '/locations/brisbane',
+      '/locations/perth',
+      '/locations/adelaide',
+      '/locations/canberra',
+      '/locations/geelong',
+      '/locations/ballarat',
+      '/locations/bendigo',
+    ],
   },
 };
 
