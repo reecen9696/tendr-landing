@@ -11,7 +11,7 @@ Tendr
 Melbourne, VIC, Australia
 0487 028 339
 reece@gotendr.com
-https://gotendr.com
+https://www.gotendr.com
 ```
 
 ## 1. Do these first (highest leverage)
@@ -21,8 +21,8 @@ https://gotendr.com
       something like "Construction estimating service" or "Quantity surveyor".
       Verify it. This is the single biggest local-visibility asset in Australia,
       and Gemini and AI Overviews lean on it directly.
-- [ ] **Google Search Console.** Verify `gotendr.com`, submit
-      `https://gotendr.com/sitemap.xml`, set the country target to Australia.
+- [ ] **Google Search Console.** Verify `www.gotendr.com` (the canonical host), submit
+      `https://www.gotendr.com/sitemap.xml`, set the country target to Australia.
 - [ ] **Bing Webmaster Tools.** Verify the site and import the sitemap from
       Search Console. Copilot cannot cite a page Bing has not indexed, so
       skipping this closes off one engine entirely.

@@ -1,0 +1,39 @@
+# Tendr
+
+> Tendr is an Australian estimating and tendering consultancy for commercial
+> landscape subcontractors. We measure quantities off the drawings, price them to
+> the client's rates, and hand back a submission-ready tender.
+
+Contact: reece@gotendr.com | +61487028339
+
+## Pages
+
+- [Tendr - tender estimating for commercial landscapers](https://www.gotendr.com/)
+- [About Tendr](https://www.gotendr.com/about): Tendr is a Melbourne estimating and tendering consultancy for commercial landscapers. Who we are, what we price, and how we work with your rates.
+- [Talk to an estimator](https://www.gotendr.com/contact): Talk to an estimator about a live tender. Book a call, email reece@gotendr.com or call 0487 028 339. Fixed fee quoted up front, no lock-in.
+- [Estimating and tendering guides](https://www.gotendr.com/guides): Practical guides on pricing, quantity takeoffs, bills of quantities and tendering for commercial landscape subcontractors, written by working estimators.
+
+## Guides
+
+### Pricing
+
+How to build a price you can stand behind: rates, preliminaries, overhead, margin and contingency.
+
+- [Pricing commercial landscape work](https://www.gotendr.com/guides/pricing)
+- [How to price a commercial landscape tender](https://www.gotendr.com/guides/pricing/how-to-price-a-commercial-landscape-tender): A step-by-step guide to pricing a commercial landscape tender in Victoria: takeoffs, rates, preliminaries, margin and the BOQ, from a working estimator.
+
+### Tendering
+
+Reading a tender scope, putting a submission together, and improving your win rate.
+
+- [Tendering and bidding](https://www.gotendr.com/guides/tendering)
+- [What documents do you need to price a commercial landscape tender?](https://www.gotendr.com/guides/tendering/documents-needed-to-price-a-landscape-tender): The exact documents an estimator needs to price a commercial landscape tender: scope, drawings, pricing schedule and conditions of contract.
+- [In-house vs outsourced tender estimating: which is right for your landscape business?](https://www.gotendr.com/guides/tendering/in-house-vs-outsourced-tender-estimating): Should you keep landscape tender estimating in-house or outsource it? An honest comparison of cost, speed, control and bid volume to help you decide.
+- [Is a commercial landscape tender worth bidding?](https://www.gotendr.com/guides/tendering/is-a-landscape-tender-worth-bidding): How to decide if a commercial landscape tender is worth bidding, before you spend days pricing it: scope clarity, competition, margin and fit.
+
+### Variations
+
+Where scope gaps hide, what to check before signing, and how to price a variation so it gets paid.
+
+- [Scope, contracts and variations](https://www.gotendr.com/guides/variations)
+- [How to price a variation on a commercial landscape contract](https://www.gotendr.com/guides/variations/how-to-price-a-landscape-contract-variation): How to price a variation on a commercial landscape contract so it gets approved and paid: notice, scope, rates, records and submission.

@@ -447,6 +447,10 @@ function graphFor(nodes, pageUrl, pageName, pageDescription) {
   for (const node of nodes) {
     const copy = { ...node };
     delete copy['@context'];
+    // Point the author entity at the page that actually carries the bio.
+    if (copy.author && copy.author.url === `${SITE.origin}/`) {
+      copy.author = { ...copy.author, url: `${SITE.origin}/about` };
+    }
     const existing = copy['@id'] && graph.find((n) => n['@id'] === copy['@id']);
     if (existing) Object.assign(existing, copy);
     else graph.push(copy);
@@ -455,7 +459,7 @@ function graphFor(nodes, pageUrl, pageName, pageDescription) {
   return JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }, null, 2);
 }
 
-function renderHead({ title, description, url, image, extraCss = [], graph, type = 'article', published, modified }) {
+function renderHead({ title, description, url, image, extraCss = [], graph, type = 'article', published, modified, noindex = false }) {
   const abs = (p) => (/^https?:/.test(p) ? p : SITE.origin + p);
   return `  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -463,7 +467,7 @@ function renderHead({ title, description, url, image, extraCss = [], graph, type
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
   <link rel="canonical" href="${SITE.origin}${url}">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="${noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'}">
   <meta name="theme-color" content="#0B2026">
 
   <meta property="og:type" content="${type}">
@@ -491,10 +495,10 @@ ${extraCss.map((c) => `  <link rel="stylesheet" href="${c}">`).join('\n')}
 
   <script>document.documentElement.classList.add("js");</script>
 
-  <script type="application/ld+json">
+${graph ? `  <script type="application/ld+json">
 ${graph}
   </script>
-`;
+` : ''}`;
 }
 
 function renderPage({ head, chrome, main, bodyClass = '' }) {
@@ -517,6 +521,17 @@ ${chrome.footer}
 }
 
 /**
+ * " | Tendr" suffix, unless the title already names the brand (several sources
+ * set a title_tag that does) or the result would run past the ~65 chars
+ * Google renders.
+ */
+const withBrand = (title) => {
+  if (new RegExp(`\\b${SITE.brand}\\b`, 'i').test(title)) return title;
+  const suffixed = `${title} | ${SITE.brand}`;
+  return suffixed.length > 65 ? title : suffixed;
+};
+
+/**
  * Article sources carry a visible "Guides > Pillar > Title" trail above the H1.
  * The trail is dropped from the page and kept only as BreadcrumbList JSON-LD,
  * which is what Google actually reads for the breadcrumb in a search result.
@@ -529,7 +544,7 @@ function renderArticle(article, chrome, urls) {
   const graph = graphFor(article.jsonld, article.url, article.title, article.description);
 
   const head = renderHead({
-    title: `${article.title} | ${SITE.brand}`.length > 65 ? article.title : `${article.title} | ${SITE.brand}`,
+    title: withBrand(article.title),
     description: article.description,
     url: article.url,
     image: article.image,
@@ -713,6 +728,64 @@ const formatDate = (iso) => {
 
 // ------------------------------------------------------ sitemap / robots ----
 
+function renderLlms(articles, sections, pillars) {
+  const line = (url, name, desc) => `- [${name}](${SITE.origin}${url})${desc ? `: ${desc}` : ''}`;
+  const standalone = articles.filter((a) => a.standalone);
+
+  const clusters = [...pillars.entries()].map(([slug, items]) => {
+    const pillar = PILLARS[slug];
+    return `### ${pillar.name}\n\n${pillar.blurb}\n\n`
+      + [line(`/guides/${slug}`, pillar.heading, ''),
+         ...items.map((a) => line(a.url, a.heading || a.title, a.description))].join('\n');
+  }).join('\n\n');
+
+  return `# ${SITE.brand}
+
+> ${SITE.brand} is an Australian estimating and tendering consultancy for commercial
+> landscape subcontractors. We measure quantities off the drawings, price them to
+> the client's rates, and hand back a submission-ready tender.
+
+Contact: ${SITE.email} | ${SITE.telephone}
+
+## Pages
+
+${[line('/', `${SITE.brand} - tender estimating for commercial landscapers`, ''),
+   ...standalone.map((a) => line(a.url, a.heading || a.title, a.description)),
+   ...[...sections.keys()].map((slug) => line(`/${slug}`, SECTIONS[slug].h1, SECTIONS[slug].description))].join('\n')}
+
+## Guides
+
+${clusters}
+`;
+}
+
+function renderNotFound(chrome) {
+  const head = renderHead({
+    title: `Page not found | ${SITE.brand}`,
+    description: 'That page does not exist. Browse the estimating and tendering guides, or get in touch.',
+    url: '/404',
+    image: SITE.ogImage,
+    extraCss: ['/css/article.css'],
+    graph: null,
+    type: 'website',
+    noindex: true,
+  });
+
+  return renderPage({
+    head,
+    chrome,
+    bodyClass: 'page-article',
+    main: `  <main class="article-page guides-index">
+    <header class="guides-hero">
+      <span class="eyebrow">404</span>
+      <h1>That page does not exist</h1>
+      <p class="guides-lead">The link may be out of date. The guides index lists everything we have published, or you can talk to an estimator directly.</p>
+    </header>
+${CTA}
+  </main>`,
+  });
+}
+
 function renderSitemap(articles, sections, pillars) {
   const today = new Date().toISOString().slice(0, 10);
   const newest = (list) => list.reduce((m, a) => {
@@ -851,6 +924,10 @@ for (const [slug, items] of orderedSections) {
 }
 writes.push([join(dir, 'sitemap.xml'), renderSitemap(articles, orderedSections, orderedPillars)]);
 writes.push([join(dir, 'robots.txt'), renderRobots()]);
+// llms.txt is the emerging convention for handing an assistant a map of the site
+// in one fetch; 404.html is what Cloudflare Pages serves for an unmatched path.
+writes.push([join(dir, 'llms.txt'), renderLlms(articles, orderedSections, orderedPillars)]);
+writes.push([join(dir, '404.html'), renderNotFound(chrome)]);
 
 if (CHECK_ONLY) {
   console.log(`check ok: ${articles.length} article(s), ${writes.length} file(s) would be written`);
@@ -876,7 +953,7 @@ if (CHECK_ONLY) {
   for (const [slug] of orderedSections) console.log(`  - /${slug} (section index)`);
   for (const slug of orderedPillars.keys()) console.log(`  - /guides/${slug} (pillar hub)`);
   for (const a of articles) console.log(`  - ${a.url}`);
-  console.log(`  - sitemap.xml, robots.txt`);
+  console.log(`  - sitemap.xml, robots.txt, llms.txt, 404.html`);
 
   if (moved.length) {
     console.log(`\nfiled ${moved.length} source(s) out of the inbox:`);
