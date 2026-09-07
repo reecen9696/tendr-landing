@@ -516,8 +516,16 @@ ${chrome.footer}
 `;
 }
 
+/**
+ * Article sources carry a visible "Guides > Pillar > Title" trail above the H1.
+ * The trail is dropped from the page and kept only as BreadcrumbList JSON-LD,
+ * which is what Google actually reads for the breadcrumb in a search result.
+ */
+const stripBreadcrumb = (html) =>
+  html.replace(/\s*<nav aria-label="Breadcrumb">[\s\S]*?<\/nav>/, '');
+
 function renderArticle(article, chrome, urls) {
-  const body = resolveLinks(article, urls);
+  const body = stripBreadcrumb(resolveLinks(article, urls));
   const graph = graphFor(article.jsonld, article.url, article.title, article.description);
 
   const head = renderHead({
@@ -588,9 +596,6 @@ function renderPillar(slug, items, chrome) {
 
   const main = `  <main class="article-page guides-index">
     <header class="guides-hero">
-      <nav aria-label="Breadcrumb" class="breadcrumb">
-        <a href="/">Home</a> &rsaquo; <a href="/guides">Guides</a> &rsaquo; <span>${esc(pillar.name)}</span>
-      </nav>
       <span class="eyebrow">${esc(pillar.name)}</span>
       <h1>${esc(pillar.heading)}</h1>
       <p class="guides-lead">${esc(pillar.blurb)}</p>
@@ -680,9 +685,6 @@ function renderSectionIndex(slug, articles, chrome) {
 
   const main = `  <main class="article-page guides-index">
     <header class="guides-hero">
-      <nav aria-label="Breadcrumb" class="breadcrumb">
-        <a href="/">Home</a> &rsaquo; <span>${esc(section.label)}</span>
-      </nav>
       <span class="eyebrow">${esc(section.label)}</span>
       <h1>${esc(section.h1)}</h1>
       <p class="guides-lead">${esc(section.lead)}</p>

@@ -16,36 +16,6 @@
 }
 
 /* --------------------------------------------------------------------------
-   Breadcrumb
-   -------------------------------------------------------------------------- */
-
-.article-page nav[aria-label="Breadcrumb"],
-.breadcrumb {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  line-height: 1;
-  color: var(--gray-text);
-  margin-bottom: 28px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-}
-
-.article-page nav[aria-label="Breadcrumb"] a,
-.breadcrumb a {
-  color: var(--gray-text);
-  border-bottom: 1px solid transparent;
-  transition: color var(--dur-fast) var(--ease-soft), border-color var(--dur-fast) var(--ease-soft);
-}
-
-.article-page nav[aria-label="Breadcrumb"] a:hover,
-.breadcrumb a:hover { color: var(--orange-600); border-bottom-color: currentColor; }
-
-.article-page nav[aria-label="Breadcrumb"] span,
-.breadcrumb span { color: var(--navy-800); }
-
-/* --------------------------------------------------------------------------
    Headings and body copy
    -------------------------------------------------------------------------- */
 
