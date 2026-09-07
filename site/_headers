@@ -1,0 +1,9 @@
+# Cloudflare Pages response headers. Mirrors what vercel.json used to set.
+# More specific rules are applied in addition to the wildcard rule below.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/assets/*
+  Cache-Control: public, max-age=3600, must-revalidate

@@ -1,0 +1,20 @@
+name: site build check
+
+on:
+  push:
+    paths: ['site/**', 'SEO/blogs/**', '.github/workflows/site-check.yml']
+  pull_request:
+    paths: ['site/**', 'SEO/blogs/**']
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      # --check validates links, metadata and JSON-LD without writing or moving
+      # anything, so a broken article fails here instead of on the live site.
+      - run: node build.mjs --check
+        working-directory: site

@@ -1,9 +1,0 @@
-.env*
-.vercel
-.gitignore
-.vercelignore
-.DS_Store
-
-# Article sources and the generator are build inputs, not served files.
-content
-build.mjs
