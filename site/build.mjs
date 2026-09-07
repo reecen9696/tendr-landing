@@ -47,6 +47,22 @@ const SECTIONS = {
     lead: 'Practical, no-fluff guides on pricing, measuring and tendering commercial landscape work. Written by the estimators who price these packages every week.',
     grouped: true,
   },
+  services: {
+    label: 'Services',
+    h1: 'What we price',
+    title: 'Estimating and Tendering Services | Tendr',
+    description: 'Quantity takeoffs, priced bills of quantities, tender submissions, scope and contract review and variation pricing for commercial landscape subcontractors.',
+    lead: 'Five services, all priced per tender, all against your own rates. Take one or take the lot.',
+    grouped: false,
+    // Services read in the order the work happens, not newest-first.
+    order: [
+      '/services/quantity-takeoff',
+      '/services/priced-bill-of-quantities',
+      '/services/tender-submission',
+      '/services/scope-contract-review',
+      '/services/variation-pricing',
+    ],
+  },
   locations: {
     label: 'Locations',
     h1: 'Where we price tenders',
@@ -739,6 +755,15 @@ function renderLlms(articles, sections, pillars) {
          ...items.map((a) => line(a.url, a.heading || a.title, a.description))].join('\n');
   }).join('\n\n');
 
+  // A grouped section (guides) is listed by pillar below; every other section
+  // lists its own pages, so nothing is reachable only through a hub link.
+  const flat = [...sections.entries()]
+    .filter(([slug]) => !SECTIONS[slug].grouped)
+    .map(([slug, items]) => `## ${SECTIONS[slug].label}\n\n${SECTIONS[slug].lead}\n\n`
+      + [line(`/${slug}`, SECTIONS[slug].h1, SECTIONS[slug].description),
+         ...items.map((a) => line(a.url, a.heading || a.title, a.description))].join('\n'))
+    .join('\n\n');
+
   return `# ${SITE.brand}
 
 > ${SITE.brand} is an Australian estimating and tendering consultancy for commercial
@@ -750,10 +775,13 @@ Contact: ${SITE.email} | ${SITE.telephone}
 ## Pages
 
 ${[line('/', `${SITE.brand} - tender estimating for commercial landscapers`, ''),
-   ...standalone.map((a) => line(a.url, a.heading || a.title, a.description)),
-   ...[...sections.keys()].map((slug) => line(`/${slug}`, SECTIONS[slug].h1, SECTIONS[slug].description))].join('\n')}
+   ...standalone.map((a) => line(a.url, a.heading || a.title, a.description))].join('\n')}
+
+${flat}
 
 ## Guides
+
+${line('/guides', SECTIONS.guides.h1, SECTIONS.guides.description)}
 
 ${clusters}
 `;
@@ -871,6 +899,15 @@ for (const a of articles) {
   if (!bySection.has(a.section)) bySection.set(a.section, []);
   bySection.get(a.section).push(a);
 }
+// A section may pin its own running order; otherwise the newest-first sort above
+// stands. An item missing from the list sorts to the end rather than to the top.
+for (const [slug, items] of bySection) {
+  const order = SECTIONS[slug] && SECTIONS[slug].order;
+  if (!order) continue;
+  const rank = (a) => (order.indexOf(a.url) === -1 ? order.length : order.indexOf(a.url));
+  items.sort((a, b) => rank(a) - rank(b));
+}
+
 const orderedSections = new Map(
   [...bySection.entries()].sort((x, y) => Object.keys(SECTIONS).indexOf(x[0]) - Object.keys(SECTIONS).indexOf(y[0]))
 );
